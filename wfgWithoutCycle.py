@@ -29,7 +29,7 @@ if __name__=="__main__":
     process=[1,2,3,4,5]
     prr_adL={1:[1],
             2:[2,5],
-            3:[5],
+            3:[3],
             4:[4],
             5:[]}
     print("PROCESS-REQUESTING-RESOURCE-ADL",prr_adL)
