@@ -7,10 +7,13 @@
     - Output whether a deadlock exists and the processes involved.
 ---
 ## NOTES
-- **RAG**:Resource allocation graph have both `P` *process* node and `R` *resouce*  node,which involves deetcing cycle when resouce have *multiple instances*. 
+- **RAG** :Resource allocation graph have both `P` *process* node and `R` *resouce*  node,which involves deetcing cycle when resouce have *multiple instances* . 
 <br>
-- **WFG**:Wait for graph just gives dependecny relationship between `P` with the removal of `R` in ***RAG***.This involves detection when `R` has a *single instance*.
+
+- **WFG** :Wait for graph just gives dependecny relationship between `P` with the removal of `R` in ***RAG*** .This involves detection when `R` has a *single instance* .
+  
 <br>
+
 - **Wait for Graph analysis** simpy talks about *deadlock detection* with existance of **cycle** in *wait for* relation.
     - we can use ***topological sort*** to detect cycles using `KAHN'S ALGORITHM` which uses `BFS`.
 ---
