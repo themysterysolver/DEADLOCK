@@ -8,6 +8,7 @@
     -  `Chandy-Misra-Haas-Edge_chasing_algorithmTC1.py` has cycle
     - `Chandy-Misra-Haas-Edge_chasing_algorithmTC2.py` doens't have cycle
 - `DEADLOCK CREATION/Deadlock.java` created a deadlock using threads which is viewd with help of `jps` and `jstack`
+- There are **2** `the_making.md` which will give you a insight how code and logic works.
 ### 📁REPO STRUCTURE
 ```.
 ├── Chandy-Misra-Haas-Edge_chasing_algorithmTC1.py
