@@ -1,5 +1,31 @@
+from collections import deque
+def khan(wfg,n):
+    topoSort=[]
+    indegree={i:0 for i in wfg.keys()}
+    print("INDEGREE BEFORE:",indegree)
+
+    for key,val in wfg.items():
+        for v in val:
+            indegree[v]=indegree.get(v,0)+1
+    print("INDEGREE AFTER:",indegree)
+    q=deque([])
+    for key,val in indegree.items():
+        if val==0:
+            q.append(key)
+    print("QUEUE:",q)
+    if len(q)==0:
+        return True
+    while q:
+        node=q.popleft()
+        topoSort.append(node)
+        for neighbour in wfg[node]:
+            indegree[neighbour]-=1
+            if(indegree[neighbour]==0):
+                q.append(neighbour)
+    return len(topoSort)<n
+
 if __name__=="__main__":
-    
+    n=5
     prr_adL={1:[1],
             2:[3,4,5],
             3:[5],
@@ -19,3 +45,4 @@ if __name__=="__main__":
             wfg[key].extend(rap_adL[resource])
         wfg[key]=list(set(wfg[key]))
     print("WFG:",wfg)
+    print("HAS CYCLE",khan(wfg,n))
