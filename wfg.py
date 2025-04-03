@@ -26,6 +26,7 @@ def khan(wfg,n):
 
 if __name__=="__main__":
     n=5
+    process=[1,2,3,4,5]
     prr_adL={1:[1],
             2:[3,4,5],
             3:[5],
@@ -39,7 +40,7 @@ if __name__=="__main__":
              5:[4]}
     print("RESOURCE-ALLOCATED-PROCESS-ADL",rap_adL)
 
-    wfg={i:[] for i in prr_adL.keys()}
+    wfg={i:[] for i in process}
     for key,val in prr_adL.items():
         for resource in val:
             wfg[key].extend(rap_adL[resource])
