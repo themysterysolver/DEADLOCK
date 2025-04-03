@@ -25,3 +25,15 @@
         - if the indegree of neighbours become zero add them to `q`
     - **STEP-4**:len(TOPO_SORT)\<len(VERTICES) then we have **cycle**
 ---
+
+### CHANDY MISRA HAAS
+##### EDGE CHASING ALGORITHM
+- It is a algorithm which works with `probe`.
+- Let's take  a `wfg`,here each *process* `p` can belong to any sites `Si`.
+- A probe is passed down form process `pi` to `pj` (***pi-->pj***)
+- A probe is defined as a `triplet tuple`=>`(i,j,k)`
+    - **i**=>initator process
+    - **j**=>sender process
+    - **k**=> reciver process
+- We said we get a ***loop*** if $i==k$.
+---
