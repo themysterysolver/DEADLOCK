@@ -6,7 +6,9 @@ from collections import deque
 prr_adL={1:[1],2:[]}
 rap_adL={1:[2],2:[1]}
 lock=threading.Lock()
-has_deadlock=False
+
+deadlock_count=0
+threshold=3
 
 def build_wfg():
     wfg={i:[] for i in process}
@@ -52,14 +54,18 @@ def process1_release_late():
         rap_adL[2]=[]
 
 def detection():
-    global has_deadlock
+    global deadlock_count
     for i in range(5):
         time.sleep(1)
         wfg=build_wfg()
         print("IS THERE DEADLOCK DURING REQ,REPLY:",detect_deadlock(wfg))
-        if(detect_deadlock) or has_deadlock:
-            has_deadlock=True
-            return
+        if detect_deadlock(wfg):
+            deadlock_count+=1
+            if deadlock_count>=threshold:
+                print("DEADLOCK FOUND FOR SURE")
+            else:
+                print("NO DEADLOCK FOUND")
+                return
 if __name__=="__main__":
     n=2
     process=[1,2]
